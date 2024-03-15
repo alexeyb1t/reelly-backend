@@ -3,18 +3,18 @@ schema {
 }
 
 type Query {
-    projectsSearch(projectsSearchInput: ProjectsSearchInput!): Project
+    projectsSearch(projectsSearchInput: ProjectsSearchInput!): [ProjectSearchResponse]
 }
 
-type Project {
-    id: String!
-    name: String!
-    bedrooms: Int!
-    region: String!
+type ProjectSearchResponse {
+    id: Int
+    name: String
+    bedrooms: Int
+    region: String
 }
 
 input ProjectsSearchInput {
-    name: String!
-    bedrooms: Int!
-    region: String!
+    name: String
+    bedrooms: Int
+    region: String
 }

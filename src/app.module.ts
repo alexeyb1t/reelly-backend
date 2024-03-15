@@ -3,6 +3,8 @@ import { ProjectsResolver } from './resolvers/projects/projects.resolver';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ConfigModule } from '@nestjs/config';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { ProjectsService } from './services/projects/projects.service';
+import { PrismaService } from './services/prisma/prisma.service';
 
 @Module({
   imports: [
@@ -19,6 +21,6 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
     }),
   ],
   controllers: [],
-  providers: [ProjectsResolver],
+  providers: [ProjectsResolver, ProjectsService, PrismaService],
 })
 export class AppModule {}

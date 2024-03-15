@@ -9,20 +9,20 @@
 /* eslint-disable */
 
 export class ProjectsSearchInput {
-    name: string;
-    bedrooms: number;
-    region: string;
+    name?: Nullable<string>;
+    bedrooms?: Nullable<number>;
+    region?: Nullable<string>;
 }
 
 export abstract class IQuery {
-    abstract projectsSearch(projectsSearchInput: ProjectsSearchInput): Nullable<Project> | Promise<Nullable<Project>>;
+    abstract projectsSearch(projectsSearchInput: ProjectsSearchInput): Nullable<Nullable<ProjectSearchResponse>[]> | Promise<Nullable<Nullable<ProjectSearchResponse>[]>>;
 }
 
-export class Project {
-    id: string;
-    name: string;
-    bedrooms: number;
-    region: string;
+export class ProjectSearchResponse {
+    id?: Nullable<number>;
+    name?: Nullable<string>;
+    bedrooms?: Nullable<number>;
+    region?: Nullable<string>;
 }
 
 type Nullable<T> = T | null;
